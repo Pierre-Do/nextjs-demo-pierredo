@@ -16,5 +16,5 @@ export function DisplayCart(): React.JSX.Element | null {
     return null;
   }
 
-  return <div>{JSON.stringify(cart)}</div>;
+  return <div>{cart?.items?.length ?? 0}</div>;
 }

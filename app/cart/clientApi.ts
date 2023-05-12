@@ -1,12 +1,12 @@
 export interface CartItem {
-  id: string;
+  id: number;
   quantity: number;
   description: string;
 }
 
 export interface Cart {
   id: string;
-  cart_items: CartItem[];
+  items: CartItem[];
 }
 
 function responseToCart(response: Response): Promise<Cart> {
@@ -23,6 +23,13 @@ export async function getCart(): Promise<Cart> {
 export async function setQuantity(): Promise<Cart> {
   const response = await fetch('/cart', {
     method: 'POST',
+  });
+  return responseToCart(response);
+}
+
+export async function clearCart(): Promise<Cart> {
+  const response = await fetch('/cart', {
+    method: 'DELETE',
   });
   return responseToCart(response);
 }
