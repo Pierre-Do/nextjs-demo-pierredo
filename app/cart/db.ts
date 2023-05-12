@@ -50,7 +50,6 @@ export function handleDb<T>(promise: Promise<T>) {
       return value;
     })
     .catch(async (e) => {
-      console.error(e);
       await prisma.$disconnect();
       process.exit(1);
     });
