@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 
+import { DisplayCart } from '@/app/cart/DisplayCart';
+
 export default function Checkout(): React.JSX.Element {
   return (
     <main className="flex gap-2 p-24">
@@ -10,6 +12,7 @@ export default function Checkout(): React.JSX.Element {
       >
         Back to Product
       </Link>
+      <DisplayCart />
     </main>
   );
 }
